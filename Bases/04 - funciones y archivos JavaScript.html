@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo JavaScript in Body</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction1()">Try it 1</button> <!-- Botón que al hacer clic ejecuta la función myFunction() -->
+
+<script>
+    function myFunction1() { // funcion que se ejecuta al hacer clic en el botón
+      document.getElementById("demo").innerHTML = "Paragraph changed."; // Cambia el contenido del elemento con id "demo" y lo hace con innerHTML
+    }
+</script>
+
+<br>
+
+<p id="demo2">A Paragraph.</p>
+
+<button type="button" onclick="myFunction2()">Try it 2</button> <!-- Botón que al hacer clic ejecuta la función myFunction() -->
+
+<script src="/Bases/04 - function/function.js"></script> <!-- Incluye el archivo JavaScript externo "function.js" que contiene la función myFunction() -->
+
+ <!-- <script src="https://www.w3schools.com/js/myScript.js"></script> -->  <!-- Podemos Llamar un archivo desde un servidor externo, en este caso el de W3Schools como ejemplo -->
+
+</body>
+</html> 

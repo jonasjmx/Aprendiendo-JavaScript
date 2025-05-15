@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My Web Page</h1>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "<h2>Hello World</h2>"; // Se puede usar innerHTML para cambiar el contenido de un elemento HTML y ademas cambiar su formato
+// <p id="demo"></p> pasa a ser <h2>Hello World</h2>
+document.getElementById("demo").innerHTML = "<h2 style='color:blue;'>Hello World</h2>"; // Se puede usar innerHTML para cambiar el contenido de un elemento HTML y ademas cambiar su formato
+// <p id="demo"></p> pasa a ser <h2 style='color:blue;'>Hello World</h2>
+
+document.getElementById("demo").innerText = "Texto"; // Se puede usar innerText para cambiar el contenido de un elemento HTML SIN CAMBIAR su formato
+</script>
+
+</body>
+</html> 

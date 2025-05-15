@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Probando CreateElement y AppendChild</h2>
+
+<div id="contenedor"></div>
+
+<button onclick="myfuncion()">clickeame</button>
+
+<script>
+function myfuncion(){
+	let nuevoparrafo = document.createElement("p"); // crea un nuevo elemento <p></p>
+    // <p></p>
+    nuevoparrafo.innerText = "nuevo texto de parrafo"; // agrega texto al nuevo elemento <p>nuevo texto de parrafo</p>
+    // <p>nuevo texto de parrafo</p>
+    document.getElementById("contenedor").appendChild(nuevoparrafo); // agrega el nuevo elemento <p> al contenedor <div id="contenedor"></div>
+    // <div id="contenedor">
+    // <p>nuevo texto de parrafo</p>
+    // </div>
+}
+</script>
+
+</body>
+</html> 

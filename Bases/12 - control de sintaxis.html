@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Statements</h2>
+
+<p>Multiple statements on one line are allowed.</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<button onclick="myFunction()">Click!</button>
+
+<script>
+// cada ; indica el final de una instrucción
+let a, b, c;
+a = 5; b = 6; c = a + b; // a cada variable se le asigna un valor
+document.getElementById("demo1").innerHTML = c; // muestra el resultado de la suma
+// document.getElementById("demo1").innerHTML=c; // se controla la sintaxis de la instrucción asi exista o no espacios y dara el mismo resultado
+
+// el resultado de la suma se muestra en el elemento con id demo1
+
+// Esto es un bloque de código, se puede usar para agrupar declaraciones y controlar el flujo de ejecución
+function myFunction() {
+  document.getElementById("demo1").innerHTML = "Hello Dolly!";
+  document.getElementById("demo2").innerHTML = "How are you?";
+}
+</script>
+
+<script>
+    // Palabra clave	Descripción
+
+    // var	            Declara una variable
+    // let	            Declara una variable de bloque
+    // const	        Declara una constante de bloque
+    // if	            Marca un bloque de declaraciones que se ejecutarán con una condición
+    // switch	        Marca un bloque de declaraciones a ejecutar en diferentes casos
+    // for	            Marca un bloque de declaraciones que se ejecutarán en un bucle
+    // function	        Declara una función
+    // return	        Sale de una función
+    // try	            Implementa el manejo de errores en un bloque de declaraciones
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First Web Page</h2>
+<p>My first paragraph.</p>
+
+<p>Never call document.write after the document has finished loading.
+It will overwrite the whole document.</p>
+
+<script>
+document.write(5 + 6);  // Muestra el resultado de una operación hecho en JavaScript
+document.write("<br>"); // Salto de línea
+document.write("Hello World!"); // Muestra un texto en la página
+</script>
+
+<br>
+
+<script>
+    function myFunction() {
+        // Nunca se de usar document.write después de que el documento ha terminado de cargar
+        document.getElementById("demo").innerHTML = document.write("Hello World!"); // Borra el contenido de la página y muestra solo "Hello World!"
+        // document.getElementById("demo").innerText = document.write("Hello World!"); // Borra el contenido de la página y muestra solo "Hello World!"
+    }
+</script>
+
+<p id="demo"></p>
+
+<button onclick="myFunction()">Borrar e indicar el texto</button>
+
+</body>
+</html> 
