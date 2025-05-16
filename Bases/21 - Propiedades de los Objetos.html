@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Object Properties</h1>
+<h2>Access a Property with []</h2>
+
+<p id="demo"></p>
+
+<script>
+const person1 = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+
+// Acceder a las propiedades de un objeto por medio de corchetes [] especificando el nombre de la propiedad entre comillas.
+document.getElementById("demo").innerHTML = person1["firstname"] + " is " + person1["age"] + " years old.";
+</script>
+
+<br>
+
+<h2>Access a Property with .</h2>
+
+<p id="demo"></p>
+
+<script>
+const person2 = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+
+// Acceder a las propiedades de un objeto por medio de la notación de punto.
+document.getElementById("demo").innerHTML = person2.firstname + " is " + person2.age + " years old.";
+</script>
+
+<br>
+
+<h2>Accessing a Property with an Expression</h2>
+
+<p id="demo"></p>
+
+<script>
+const person3 = {
+  firstName: "John",
+  lastName : "Doe",
+  age      :  50
+};
+// Acceder a las propiedades de un objeto por medio de una expresión.
+// Se puede usar una variable para acceder a la propiedad de un objeto.
+let x = "firstName";
+let y = "age";
+document.getElementById("demo").innerHTML = person3[x] + " is " + person3[y] + " years old.";
+</script>
+
+<br>
+
+<h2>Adding a new Property</h2>
+
+<p id="demo"></p>
+
+<script>
+const person4 = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+
+// Agregamos una nueva propiedad con un valor al objeto person4.
+person4.nationality = "English";
+document.getElementById("demo").innerHTML =
+person4.firstname + " is " + person4.nationality + ".";
+</script>
+
+<br>
+
+<h2>Deleting a Property</h2>
+
+<p id="demo"></p>
+
+<script>
+const person5 = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+
+// Eliminar una propiedad de un objeto.
+delete person5.age;
+
+document.getElementById("demo").innerHTML =
+person5.firstname + " is " + person5.age + " years old.";
+</script>
+
+<br>
+
+<!-- Anidaciones con objetos -->
+
+<h2>Accessing Nested Objects</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create nested Objects
+const myObj = { // Se crea un objeto llamado myObj
+  name: "John",
+  age: 30,
+  myCars: { // Se crea un objeto dentro de myObj llamado myCars
+    car1: "Ford",
+    car2: "BMW",
+    car3: "Fiat"
+  }
+}
+// Acceder a un objeto anidado por medio de la notación de punto.
+// Se accede a la propiedad car2 del objeto myCars que está dentro del objeto myObj.
+document.getElementById("demo").innerHTML = myObj.myCars.car2;
+
+// Acceder a un objeto anidado por medio de la notación de punto y a la propiedad car2 del objeto myCars que está dentro del objeto myObj.
+document.getElementById("demo").innerHTML = myObj.myCars["car2"];
+// Acceder a un objeto anidado por medio de la notación de corchetes y a la propiedad car2 del objeto myCars por medio de corchetes que está dentro del objeto myObj.
+document.getElementById("demo").innerHTML = myObj["myCars"]["car2"];
+
+// Acceder al objeto anidado por medio de expresiones y usar estas variables para acceder a las propiedades del objeto anidado myCars.
+let p1 = "myCars";
+let p2 = "car2";
+document.getElementById("demo").innerHTML = myObj[p1][p2];
+</script>
+
+</body>
+</html>

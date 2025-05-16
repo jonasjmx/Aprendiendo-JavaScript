@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1>JavaScript Objects</h1>
+<h2>Creating an Object</h2>
+
+
+<p id="demo"></p>
+
+<script>
+
+// Los objetos también son variables. Pero los objetos pueden contener muchos valores.
+
+// Para inicializar un objeto, se utiliza la palabra reservada "const" o "let" seguida del nombre del objeto con las llaves {} o tambien con la palabra reservada "new Object()".
+
+// Este código asigna muchos valores (Fiat, 500, blanco) a un objeto coche nombrado:
+
+// Create an Object:
+const car = {type:"Fiat", model:"500", color:"white"}; // Un objeto se define con llaves {}. Dentro de las llaves, hay una lista de propiedades separadas por comas.
+// Cada propiedad tiene un nombre y un valor. El nombre y el valor están separados por dos puntos (:).
+
+// Display Data from the Object:
+document.getElementById("demo").innerHTML =
+"The car type is " + car.type; // Al igual que en un array, se accede a los valores de un objeto con el nombre de la propiedad.
+// En este caso, el nombre de la propiedad es "type".
+
+</script>
+
+<br>
+
+<!-- Se puede crear un objeto de dos formas: -->
+
+<h2>Using an Object Literal</h2>
+
+<p id="demo"></p>
+
+<script>
+// Al crear un objeto, se pueden agregar propiedades y valores al mismo tiempo, aunque también se pueden agregar posteriormente.
+// Create an Object:
+const person1 = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// Display Data from the Object:
+document.getElementById("demo").innerHTML =
+person1.firstName + " is " + person1.age + " years old.";
+</script>
+
+<br>
+
+<h2>Using an Object Literal</h2>
+
+<p id="demo"></p>
+
+<script>
+
+// Se puede crear un objeto vacío y luego agregarle propiedades y valores.
+// Se pueden agregar propiedades y valores a un objeto vacío de la siguiente manera:
+// Create an empty Object
+const person2 = {};
+
+// Add Properties
+person2.firstName = "John";
+person2.lastName = "Doe";
+person2.age = 50;
+person2.eyeColor = "blue"; 
+
+// Display Data from Object
+document.getElementById("demo").innerHTML =
+person2.firstName + " is " + person2.age + " years old.";
+</script>
+
+<br>
+
+<!-- Se puede acceder al valor de las propiedades de 2 distintas formas: -->
+
+<p>There are two ways to access a property: object.property or object["property"]</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object:
+const person3 = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+document.getElementById("demo").innerHTML =
+"The last name is " +  person3["lastName"];
+
+document.getElementById("demo").innerHTML =
+"The last name is " + person3.lastName;
+</script>
+
+<br>
+
+<!-- Funciones en objetos -->
+
+<h2>Object Methods</h2>
+<p>A method is a function definition stored as a property value.</p>
+
+<p id="demo"></p>
+
+<script>
+const person4 = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+document.getElementById("demo").innerHTML = person4.fullName();
+</script>
+
+<script> /*  
+En JavaScript, los objetos son el Rey.
+Si Entiendes Objetos, entiendes JavaScript.
+
+    Objetos son contenedores para Propiedades y Métodos.
+    Propiedades se nombran Valores.
+    Métodos son Funciones almacenado como Propiedades.
+    Propiedades pueden ser valores primitivos, funciones o incluso otros objetos.
+
+En JavaScript, casi "todo" es un objeto.
+
+    Los objetos son objetos
+    Las matemáticas son objetos
+    Las funciones son objetos
+    Las fechas son objetos
+    Las matrices son objetos
+    Los mapas son objetos
+    Los conjuntos son objetos
+    Todos los valores de JavaScript, excepto los primitivos, son objetos.  
+
+Primitivas JavaScript
+
+    Un valor primitivo es un valor que no tiene propiedades ni métodos.
+    3.14 es un valor primitivo
+    Un tipo de datos primitivo son datos que tienen un valor primitivo.
+
+JavaScript define 7 tipos de datos primitivos:
+
+    string
+    number
+    boolean
+    null
+    undefined
+    symbol
+    bigint
+     
+*/ </script>
+
+
+</body>
+</html>

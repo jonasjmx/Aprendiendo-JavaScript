@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Functions</h1>
+
+<p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="demo1"></p>
+
+<script>
+// Definicion de la funcion
+function myFunction(p1, p2) {  // Funcion que recibe dos parametros
+  return p1 * p2;
+}
+
+let result = myFunction(4, 3); // Llamada a la funcion con los argumentos 4 y 3 y almacenando el resultado en la variable result
+// 4 * 3 = 12
+document.getElementById("demo1").innerHTML = result;
+
+// NOTA: Las funciones pueden ser llamadas desde cualquier parte del script, incluso dentro de otras funciones
+// y pueden ser llamadas antes de ser definidas, ya que el motor de JavaScript las eleva al inicio del script
+</script>
+
+<br>
+
+<p>Using a function as a variable:</p>
+
+<p id="demo2"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius."; // La funcion toCelsius puede ser llamada directamente sin ser definida antes
+// 77 Fahrenheit = 25 Celsius
+document.getElementById("demo2").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+</script>
+
+<br>
+
+<p>Outside myFunction() carName is undefined.</p>
+
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<script>
+let text1 = "Outside: " + typeof carName;
+document.getElementById("demo3").innerHTML = text1;
+
+/*  La variable carName y text no son accesibles fuera de la funcion myFunction ya que son variables locales, 
+por lo que no se puede acceder a ellas desde el exterior de la funcion.
+Si se intenta acceder a ellas, se obtendra undefined  */
+function myFunction() {
+  let carName = "Volvo";
+  let text = "Inside: " + typeof carName + " " + carName; 
+  document.getElementById("demo4").innerHTML = text;
+}
+
+myFunction();
+</script>
+
+</body>
+</html>

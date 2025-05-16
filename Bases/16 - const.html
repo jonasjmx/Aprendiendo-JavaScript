@@ -84,9 +84,8 @@ car.color = "red";
 car.owner = "Johnson";
 
 // Display the property:
-document.getElementById("demo").innerHTML = "Car owner is " + car.owner; 
+document.getElementById("demo").innerHTML = "Car owner is " + car.owner; // Se asigna cada propiedad del objeto mas no el objeto en si
 </script>
-
 
 <br>
 
@@ -97,11 +96,59 @@ document.getElementById("demo").innerHTML = "Car owner is " + car.owner;
 <script>
 try {
   const car = {type:"Fiat", model:"500", color:"white"};
-  car = {type:"Volvo", model:"EX60", color:"red"};
+  car = {type:"Volvo", model:"EX60", color:"red"}; // Da un error cuando se intenta reasignar un objeto constante
 }
 catch (err) {
   document.getElementById("demo").innerHTML = err;
 }
+</script>
+
+<script>
+// var x = 2;     // Permitido
+// const x = 2;   // No Permitido
+{
+  
+// let x = 2;     // Permitido
+// const x = 2;   // No Permitido
+}
+
+{
+// const x = 2;   // Permitido
+// const x = 2;   // No Permitido
+}
+
+// Variaciones de la declaración de variables
+
+// const x = 2;     // Permitido
+// x = 2;           // No Permitido
+// var x = 2;       // No Permitido
+// let x = 2;       // No Permitido
+// const x = 2;     // No Permitido
+
+{
+  // const x = 2;   // Permitido
+  // x = 2;         // No Permitido
+  // var x = 2;     // No Permitido
+  // let x = 2;     // No Permitido
+  // const x = 2;   // No Permitido
+}
+</script>
+
+<br>
+
+<h2>JavaScript Hoisting</h2>
+<p>With <b>const</b>, you cannot use a variable before it is declared:</p> 
+<p id="demo"></p>
+
+<script>
+try {
+  alert(carName); // variable no declarada
+  const carName = "Volvo"; // no llega aqui por la variable no declarada y lanza un error
+}
+catch (err) {
+  document.getElementById("demo").innerHTML = err; // El mensaje de error es: Cannot access 'carName' before initialization
+}
+
 </script>
 
 </body>

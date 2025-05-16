@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arithmetic</h1>
+<h2>The % Operator</h2>
+
+<p id="demo"></p>
+
+<script>
+let x = 5;
+let y = 2;
+let z = x % y; // Operacion donde se obtiene el residuo de la division o modulo
+// 5 % 2 = 1
+document.getElementById("demo").innerHTML = z;
+</script>
+
+<br>
+
+<h2>The ++ Operator</h2>
+
+<p id="demo"></p>
+
+<script>
+let a = 5;
+a++; // Incrementa el valor de a en 1
+// 5 + 1 = 6
+let b = a;
+document.getElementById("demo").innerHTML = b;
+</script>
+
+<br>
+
+<h2>The -- Operator</h2>
+
+<p id="demo"></p>
+
+<script>
+let c = 5;
+c--; // Decrementa el valor de c en 1
+// 5 - 1 = 4
+let d = c;
+document.getElementById("demo").innerHTML = d;
+</script>
+
+<br>
+
+<h2>The ** Operator</h2>
+
+<p id="demo"></p>
+
+<script>
+let e = 5;
+document.getElementById("demo").innerHTML = e ** 2; // eleva el valor de e a la potencia 2 usando el operador **
+// 5 ** 2 = 25
+</script>
+
+<br>
+
+<h2>Math.pow()</h2>
+
+<p id="demo"></p>
+
+<script>
+let f = 5;
+document.getElementById("demo").innerHTML = Math.pow(f,2); // eleva el valor de f a la potencia 2 usando la funcion Math.pow
+// 5 ** 2 = 25
+</script>
+
+<br>
+
+<h2>Operator Precedence</h2>
+<p>When many operations has the same precedence, they are computed from left to right.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 100 / 50 * 3; // usa la jerarquia de signos para calcular el resultado
+// 100 / 50 = 2
+// 2 * 3 = 6
+</script>
+
+</body>
+</html>

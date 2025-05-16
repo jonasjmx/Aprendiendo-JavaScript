@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arithmetic</h1>
+<h2>Arithmetic Operations</h2>
+<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+
+<p id="demo1"></p>
+
+<script>
+let a = 3;
+let x = (100 + 50) * a;
+document.getElementById("demo1").innerHTML = x; // 450
+
+// Operator	Description
+// +	        Addition
+// -	        Subtraction
+// *	        Multiplication
+// **	        Exponentiation (ES2016)
+// /	        Division
+// %	        Modulus (Division Remainder)
+// ++	        Increment
+// --	        Decrement
+</script>
+
+<br>
+
+<h1>JavaScript Arithmetic</h1>
+<h2>The += Operator</h2>
+
+<p id="demo2"></p>
+
+<script>
+var y = 10;
+y += 5; // sumamos con el operador +=
+document.getElementById("demo2").innerHTML = y;
+
+// JavaScript Assignment Operators
+
+// Operator	        Example	        Same As
+// =	            x = y	        x = y
+// +=	            x += y	        x = x + y
+// -=	            x -= y	        x = x - y
+// *=	            x *= y	        x = x * y
+// /=	            x /= y	        x = x / y
+// %=	            x %= y	        x = x % y
+// **=	            x **= y	        x = x ** y
+
+// JavaScript Comparison Operators
+
+// Operator         Description
+// ==	            equal to
+// ===	            equal value and equal type
+// !=	            not equal
+// !==	            not equal value or not equal type
+// >	            greater than
+// <	            less than
+// >=	            greater than or equal to
+// <=	            less than or equal to
+// ?	            ternary operator
+</script>
+
+<br>
+
+<h1>JavaScript String Operators</h1>
+<p>Note that strings are compared alphabetically:</p>
+
+<p id="demo3"></p>
+
+<script>
+let text1 = "20";
+let text2 = "5";
+let result = text1 < text2; // El resultado es true por que del 20 toma en primer caracter que es el 2 y del 5 toma solo al 5
+// y compara el 2 con el 5 como si fueran numeros y no como cadenas, como resultado da true
+document.getElementById("demo3").innerHTML = "Is 20 less than 5? " + result; // true 
+</script>
+
+<br>
+
+<h1>JavaScript String Operators</h1>
+<h2>The += Operator</h2>
+<p>The assignment operator += can concatenate strings.</p>
+
+<p id="demo"></p>
+
+<script>
+let text4 = "What a very ";
+text4 += "nice day"; // El operador += concatena cadenas
+document.getElementById("demo").innerHTML = text4; // Concadenado seria: What a very nice day
+</script>
+
+<br>
+
+<script>
+// JavaScript Logical Operators
+// Operator	Description
+// &&	logical and
+// ||	logical or
+// !	logical not
+
+// JavaScript Type Operators
+// Operator             Descripcion
+// typeof               Retorna el tipo de una variable
+// instanceof           Retorna true si un objeto es una instancia de un objeto
+
+
+// JavaScript Bitwise Operators
+// Bit operators work on 32 bits numbers.
+
+// Any numeric operand in the operation is converted into a 32 bit number. The result is converted back to a JavaScript number.
+// Operator         Description                 Example             Same as             Result          Decimal
+// &	            AND	                        5 & 1	            0101 & 0001	        0001	        1
+// |	            OR                          5 | 1	            0101 | 0001	        0101	        5
+// ~	            NOT                         ~ 5	                ~0101	            1010	        10
+// ^	            XOR                         5 ^ 1	            0101 ^ 0001	        0100	        4
+// <<	            left shift                  5 << 1	            0101 << 1	        1010	        10
+// >>	            right shift                 5 >> 1	            0101 >> 1	        0010	        2
+// >>>	            unsigned right shift        5 >>> 1	            0101 >>> 1	        0010	        2
+</script>
+
+</body>
+
+</html>
