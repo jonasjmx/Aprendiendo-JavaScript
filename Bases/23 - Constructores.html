@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo"></p>
+<p id="demo0"></p>
+
+<script>
+// El constructor se contruye como una función que puede recibir parámetros.
+// Se utiliza la palabra reservada this para referirse a la instancia del objeto y otorgarle valores a las propiedades del objeto
+
+// Constructor Function for Person objects
+function Person(first, last, age, eye) { 
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Se usa la palabra reservada new para crear una nueva instancia del objeto Person, se asigna el valor de los parámetros a las propiedades del objeto
+// Create a Person object
+
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+// Display age
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age + "."; 
+document.getElementById("demo0").innerHTML =
+"My mother is " + myMother.age + "."; 
+</script>
+
+<br>
+
+<h2>Adding a Property to a Constructor</h2>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+// Constructor function for Person Objects
+function Person1(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create 2 Person Objects;
+const mySister = new Person1("Angie", "Doe", 48, "green"); // Se crea una instancia del objeto Person1 solo con lo encontrado en el constructor
+
+// Will Not Work
+Person1.nationality = "English"; // Se agrega una propiedad al constructor Person1, pero no a la instancia mySister
+// La instancia mySister no tiene la nueva propiedad debido a que fue instanciada antes de crear la propiedad.
+
+// Display Nationality
+document.getElementById("demo1").innerHTML =
+"The nationality of my sister is " + mySister.nationality; // Se muestra undefined porque la propiedad no existe en la instancia mySister.
+
+const myBrother = new Person1("Robert", "Doe", 48, "green"); // Se crea una instancia del objeto Person1 solo con lo encontrado en el constructor
+
+Person1.prototype.city = "New York"; // Person.prototype permite agregar propiedades a todas las instancias de Person, incluyendo las creadas antes de la propiedad
+
+// Display new Property
+document.getElementById("demo2").innerHTML =
+"The nationality of my brother is " + myBrother.city; // El resultado sera "English" porque la propiedad fue agregada al prototype de Person.
+</script>
+
+<br>
+
+<h1>JavaScript Object Constructors</h1>
+
+<p id="demo3"></p>
+
+<p id="demo4"></p>
+
+<script>
+// Constructor function for Person Objects
+function Person3(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create 2 Person objects
+const myAunt = new Person3("Angelica", "Rally", 48, "black");
+
+// Creo un metodo para la instancia myAunt mas no para el constructor Person3
+// Add a Name Method
+myAunt.changeLastName = function (name) {
+  this.lastName = name;
+}
+
+// Change Name
+myAunt.changeLastName("Doe");
+
+// Display fullName
+document.getElementById("demo3").innerHTML =
+"My Aunt's last name is " + myAunt.lastName; 
+
+// Este metodo se agrega al prototype de Person3, por lo que todas las instancias de Person3 podran usar el metodo
+Person3.prototype.changeFirstName = function (name) {
+  this.firstName = name;
+}
+
+// Change Name
+myAunt.changeFirstName("Angelica");
+
+// Display Name
+document.getElementById("demo4").innerHTML =
+"My Aunt's last name is " + myAunt.firstName;
+</script>
+
+<script>
+// Constructores de JavaScript incorporados
+// JavaScript tiene constructores integrados para todos los objetos nativos:
+
+// nuevas instancias:     constructores:                 crear un objeto que puede contener:
+
+// new Object()           constructor Object()           propiedades y métodos, por ejemplo, para almacenar datos.
+// new Array()            constructor Array()            una lista de elementos, por ejemplo, para almacenar una lista de números o cadenas de texto.
+// new String()           constructor String()           una cadena de texto, por ejemplo, para almacenar un nombre o una dirección.
+// new Number()           constructor Number()           un número, por ejemplo, para almacenar una cantidad o controlar un valor numérico.
+// new Boolean()          constructor Boolean()          un valor booleano (true o false).
+// new Function()         constructor Function()         una función, por ejemplo, para almacenar una función que se puede llamar más tarde.
+// new Date()             constructor Date()             una fecha y hora específica, por ejemplo, para almacenar la fecha y hora actuales.
+// new RegExp()           constructor RegExp()           una expresión regular, por ejemplo, para validar un formato de texto.
+// new Error()            constructor Error()            un error, por ejemplo, para manejar excepciones.
+// new Math()             constructor Math()             funciones matemáticas, por ejemplo, para realizar cálculos matemáticos.
+// new JSON()             constructor JSON()             funciones y trabajar con datos JSON, ejemplo, convertir un objeto JavaScript en una cadena JSON o viceversa.
+// new Symbol()           constructor Symbol()           un valor único e inmutable, por ejemplo, para crear identificadores únicos para propiedades de objetos.
+// new Map()              constructor Map()              pares clave-valor, por ejemplo, para almacenar datos en un formato de mapa.
+// new Set()              constructor Set()              una colección de valores únicos, por ejemplo, almacenar una lista de elementos sin duplicados.
+// new WeakMap()          constructor WeakMap()          pares clave-valor débiles, por ejemplo, para almacenar datos que pueden ser recolectados por el recolector de basura.
+// new WeakSet()          constructor WeakSet()          una colección de valores únicos débiles, por ejemplo, almacenar datos que pueden ser recolectados por el recolector de basura.
+// new Promise()          constructor Promise()          una promesa, por ejemplo, para manejar operaciones asíncronas y controlar el flujo de datos.
+// new Reflect()          constructor Reflect()          funciones de reflexión, por ejemplo, para manipular objetos y sus propiedades.
+// new Proxy()            constructor Proxy()            un proxy, por ejemplo, para interceptar y redefinir operaciones en un objeto que se está proxyando en su comportamiento.
+// new Intl()             constructor Intl()             funciones de internacionalización, por ejemplo, formatear números, fechas y cadenas de texto en diferentes idiomas y regiones.
+// new ArrayBuffer()      constructor ArrayBuffer()      un buffer de datos binarios, por ejemplo, para almacenar datos en formato binario.
+// new DataView()         constructor DataView()         una vista de datos, por ejemplo, para manipular datos binarios en un buffer de datos.
+// new TypedArray()       constructor TypedArray()       un array tipado, por ejemplo, para almacenar datos numéricos en un formato específico y optimizado.
+// new MapIterator()      constructor MapIterator()      un iterador de mapa, por ejemplo, para recorrer los elementos de un mapa.
+// new Atomics()          constructor Atomics()          funciones de sincronización atómica, por ejemplo, para trabajar con datos compartidos entre múltiples hilos.
+// new WebAssembly()      constructor WebAssembly()      un módulo WebAssembly, por ejemplo, para ejecutar código de bajo nivel en el navegador.
+// new URL()              constructor URL()               una URL, por ejemplo, para trabajar con direcciones web y recursos.
+// new URLSearchParams()  constructor URLSearchParams()  parámetros de búsqueda de URL, por ejemplo, para trabajar con cadenas de consulta en URLs.
+// new File()             constructor File()             un archivo, por ejemplo, para trabajar con archivos en el sistema de archivos del navegador.
+// new Blob()             constructor Blob()             datos binarios, por ejemplo, para trabajar con archivos y datos en el navegador.
+// new FileReader()       constructor FileReader()       un lector de archivos, por ejemplo, para leer datos de archivos en el sistema de archivos del navegador.
+// new XMLHttpRequest()   constructor XMLHttpRequest()   una solicitud HTTP, por ejemplo, para realizar solicitudes asíncronas al servidor.
+// new WebSocket()        constructor WebSocket()        una conexión WebSocket, por ejemplo, para trabajar con comunicaciones en tiempo real entre el navegador y el servidor.
+// new ServiceWorker()    constructor ServiceWorker()    un trabajador de servicio, por ejemplo, para trabajar con aplicaciones web progresivas y almacenamiento en caché.
+// new Cache()            constructor Cache()            una caché, por ejemplo, para trabajar con almacenamiento en caché de recursos en el navegador.
+// new CacheStorage()     constructor CacheStorage()     almacenamiento en caché, por ejemplo, para trabajar con almacenamiento en caché de recursos en el navegador.
+// new Notification()     constructor Notification()     una notificación, por ejemplo, para mostrar notificaciones en el navegador. 
+// new MediaStream()      constructor MediaStream()      un flujo de medios, por ejemplo, para trabajar con audio y video en tiempo real.
+// new MediaRecorder()    constructor MediaRecorder()    un grabador de medios, por ejemplo, para grabar audio y video en el navegador.
+// new AudioContext()     constructor AudioContext()     un contexto de audio, por ejemplo, para trabajar con audio en el navegador.
+</script>
+
+<script>
+// Atajos: 
+
+// Usa literales de cadena "" o '' en lugar de new String(). Ejemplo, "Hola mundo" o 'Hola mundo'.
+// Usa literales de número 0 o 0.0 en lugar de new Number(). Ejemplo, 0 o 0.0.
+// Usa literales booleanos true o false en lugar de new Boolean(). Ejemplo, true o false.
+// Usa literales de objetos {} en lugar de new Object(). Ejemplo, { nombre: "Juan", edad: 30 }.
+// Use literales de matriz [] en lugar de new Array(). Ejemplo, [1, 2, 3].
+// Use literales de patrones /()/ en lugar de new RegExp(). Ejemplo, /[a-z]/.
+// Usar expresiones de función () {} en lugar de new Function(). Ejemplo, function Funcion() {}.
+// Use literales de fecha new Date() en lugar de new Date(). Ejemplo, new Date("2023-10-01").
+// Usa literales de error new Error() en lugar de new Error(). Ejemplo, new Error("Error de ejemplo").
+</script>
+
+</body>
+</html>

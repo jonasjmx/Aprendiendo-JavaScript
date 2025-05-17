@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<p>Displaying a JavaScript object will output [object Object]:</p>
+
+<p id="demo1"></p>
+
+<script>
+// Create an Object
+const person1 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Display Object
+document.getElementById("demo1").innerHTML = person1; // Se obtenía [object Object] por que no se especificaba la propiedad
+</script>
+
+<br>
+
+<h2>Displaying Properties</h2>
+
+<p id="demo2"></p>
+
+<script>
+// Create an Object
+const person2 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Display Properties
+document.getElementById("demo2").innerHTML = person2.name + ", " + person2.age + ", " + person2.city; // Se obtenía el valor de cada propiedad del objeto person2
+</script>
+
+<br>
+
+<h2>Display Properties</h2>
+
+<p id="demo3"></p>
+
+<script>
+// Create an Object
+const person3 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Build a Text
+let text1 = ""; // Se inicializa la variable text como una cadena vacía
+for (let x in person3) { // Se utiliza un bucle for...in para iterar sobre las propiedades del objeto person3
+  text1 += person3[x] + " "; // Se concatena el valor de cada propiedad a la variable text
+};
+
+// Display the Text
+document.getElementById("demo3").innerHTML = text1; // Se muestra el texto concatenado en el elemento con id "demo3"
+</script>
+
+<br>
+
+<h2>The Object.values() Method</h2>
+<p>Object.values() returns an array of values from an object:</p>
+
+<p id="demo4"></p>
+
+<script>
+// Create an Object
+const person4 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Create an Array
+const myArray = Object.values(person4); // Se utiliza Object.values() para obtener un array con los valores del objeto person
+
+// Display the Array 
+document.getElementById("demo4").innerHTML = myArray; // Se muestra todos los valores del array serarado por comas, a diferencia de un objeto que se mostraba como [object Object]
+</script>
+
+<br>
+
+<h2>The Object.entries() Method</h2>
+<p>Object.entries() makes it simple to use objects in loops:</p>
+
+<p id="demo5"></p>
+
+<script>
+const fruits = {Bananas:300, Oranges:200, Apples:500}; 
+
+let text2 = "";
+// Object.entries(fruits)     Se utiliza para obtener un array de pares clave-valor [["Bananas", 300], ["Oranges", 200], ["Apples", 500]] para iterar
+// let [fruta, cantidad]      Se utiliza destructuring para asignar con cada iteracion el array de pares clave-valor a las variables fruta y cantidad
+for (let [fruta, cantidad] of Object.entries(fruits)) {
+  text2 += fruta + ": " + cantidad + "<br>"; // Se usa el array iterado para concatenar el nombre de la fruta y su cantidad
+}
+
+document.getElementById("demo5").innerHTML = text2; // Como uso un tag <br> en la cadena de texto, se usa innerHTML.
+</script>
+
+<br>
+
+<h2>Display Properties with JSON</h2>
+
+<p id="demo6"></p>
+
+<script>
+// Create an Object
+const person5 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Display JSON
+// JSON.stringify   Sirve para convertir un objeto de JavaScript en una cadena JSON
+// JSON.parse       Sirve para convertir una cadena JSON en un objeto de JavaScript
+document.getElementById("demo6").innerHTML = JSON.stringify(person5); // Como resultado se obtiene una cadena de texto con el objeto convertido a JSON
+</script>
+
+</body>
+</html>
